@@ -10,6 +10,10 @@ Open `index.html` directly in a browser or serve the directory with any static f
 npx serve .
 ```
 
+### Additional pages
+
+- `revillaging.html` captures the Revillaging Strategy Sessions vision sketch with guided prompts.
+
 ## Deploy to GitHub Pages
 
 1. Create a new GitHub repository (e.g. `TEA` or `tea-foundation`) and leave it empty.

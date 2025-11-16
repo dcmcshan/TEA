@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Revillaging Strategy Sessions · TEA Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --accent: #7d54f2;
+        --accent-soft: rgba(125, 84, 242, 0.14);
+        --bg: #0f1020;
+        --surface: rgba(16, 18, 36, 0.75);
+        --surface-soft: rgba(255, 255, 255, 0.08);
+        --text: #f5f5fa;
+        --text-muted: rgba(245, 245, 250, 0.78);
+        --border: rgba(255, 255, 255, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: clamp(2rem, 4vw, 4rem);
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, rgba(125, 84, 242, 0.28), transparent),
+          radial-gradient(circle at bottom right, rgba(61, 182, 214, 0.24), transparent),
+          linear-gradient(135deg, #090a16 0%, #151830 100%);
+        color: var(--text);
+      }
+
+      header,
+      main {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom: clamp(2rem, 5vw, 3rem);
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+      }
+
+      nav a {
+        padding: 0.55rem 1.25rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background-color: rgba(12, 14, 32, 0.6);
+        color: inherit;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: background-color 200ms ease, transform 200ms ease;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        background-color: var(--accent-soft);
+        outline: none;
+        transform: translateY(-1px);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        letter-spacing: 0.08em;
+      }
+
+      h2 {
+        margin: 0.75rem 0 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.75rem, 3vw, 2.5rem);
+      }
+
+      .intro {
+        padding: clamp(1.75rem, 3.5vw, 2.75rem);
+        border-radius: 28px;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: 0 22px 60px rgba(6, 8, 22, 0.4);
+      }
+
+      .callout {
+        padding: clamp(1.25rem, 3vw, 1.85rem);
+        margin-top: clamp(1.5rem, 3vw, 2.5rem);
+        border-radius: 24px;
+        border: 1px solid rgba(125, 84, 242, 0.35);
+        background: linear-gradient(155deg, rgba(125, 84, 242, 0.18), transparent 60%);
+      }
+
+      .callout strong {
+        display: inline-block;
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .callout ul {
+        margin: 0.75rem 0 0;
+        padding-left: 1.25rem;
+        line-height: 1.65;
+      }
+
+      .callout ul li + li {
+        margin-top: 0.4rem;
+      }
+
+      .note {
+        margin-top: clamp(1rem, 2vw, 1.5rem);
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .section {
+        padding: clamp(1.75rem, 3.5vw, 2.75rem);
+        border-radius: 28px;
+        background-color: rgba(15, 18, 38, 0.72);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(14px);
+      }
+
+      .section h3 {
+        margin-top: 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.45rem, 3vw, 2rem);
+        letter-spacing: 0.05em;
+      }
+
+      .prompts {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+      }
+
+      .prompt {
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      blockquote {
+        margin: 0.65rem 0 0;
+        padding-left: 1.25rem;
+        border-left: 3px solid rgba(125, 84, 242, 0.4);
+        color: rgba(245, 245, 250, 0.88);
+        line-height: 1.7;
+      }
+
+      .list-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+
+      ul {
+        margin: 0.65rem 0 0;
+        padding-left: 1.2rem;
+        line-height: 1.65;
+      }
+
+      ul li + li {
+        margin-top: 0.4rem;
+      }
+
+      .actions {
+        margin-top: 1.4rem;
+      }
+
+      .actions ul {
+        list-style: square;
+      }
+
+      footer {
+        margin-top: clamp(2.5rem, 5vw, 3.5rem);
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      footer a {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+      }
+
+      footer a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 200ms ease;
+      }
+
+      footer a:hover::after {
+        transform: scaleX(1);
+      }
+
+      @media (max-width: 720px) {
+        body {
+          padding: 1.5rem;
+        }
+
+        nav {
+          gap: 0.5rem;
+        }
+
+        nav a {
+          padding: 0.5rem 1rem;
+          font-size: 0.92rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Revillaging Strategy Sessions</h1>
+      <h2>Camille's Village Vision Sketch</h2>
+      <nav aria-label="Section navigation">
+        <a href="#foundation">Foundation</a>
+        <a href="#day">Day in the Village</a>
+        <a href="#obstacles">Potential Obstacles</a>
+        <a href="#rhythm">Rhythm &amp; Schedule</a>
+        <a href="index.html">Back to TEA Foundation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p>
+          Wahoo! The container has officially opened. It is time to begin sketching a village
+          vision. This living document captures reflections, prompts, and action ideas gathered
+          for our Revillaging Strategy Sessions.
+        </p>
+        <div class="callout" role="note" aria-label="Important reminders">
+          <strong>Important</strong>
+          <ul>
+            <li>There is no rush. Sit with the questions for as long as you need.</li>
+            <li>This is a rough sketch. We will keep refining together.</li>
+            <li>There is no perfect response. Follow your intuition and preferred medium.</li>
+            <li>
+              Share your process. The more context you provide, the more support we can offer.
+            </li>
+          </ul>
+        </div>
+        <p class="note">
+          When you reach a stopping point, please text or email Emily at least 48 hours before
+          our next session so there is time to review. If you are writing in a shared document,
+          feel free to use a different font color for clarity.
+        </p>
+      </section>
+
+      <section id="foundation" class="section" aria-labelledby="foundation-heading">
+        <h3 id="foundation-heading">Part 1 · Defining the Foundation</h3>
+        <div class="prompts">
+          <div>
+            <p class="prompt">What does "village" mean to you?</p>
+            <blockquote>
+              Village is a community of connection: a web of mutually supportive relationships,
+              role models, shared meals, tea, fireside gatherings, dance, play, and co-creation.
+              It is family-style support, shared vision, spaces for play, healing, movement,
+              exploration, and art. It is a way of living closer to how we were meant to live.
+            </blockquote>
+            <blockquote>
+              The vision includes building a dance community, being a hub for playful creativity,
+              and cultivating a sustainable food forest with sober daytime dance parties, family
+              dance events, and traditions that attract open-minded people.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">What ingredients matter most?</p>
+            <blockquote>
+              Dancing and music, intergenerational presence, love of children, alternative and
+              homeschooling, creativity, open-mindedness, playfulness, presence, stewardship,
+              sustainability, low drama, self responsibility, health, movement, healing, integrity,
+              and gift economies.
+            </blockquote>
+          </div>
+          <div class="list-columns">
+            <div>
+              <p class="prompt">Location and governance considerations</p>
+              <ul>
+                <li>Anchor close to home while clarifying roles and agreements.</li>
+                <li>Explore stewardship models that honor shared space ownership.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="prompt">People, roles, and contributions</p>
+              <ul>
+                <li>Craftspeople, builders, and fixers</li>
+                <li>Artists, performers, musicians</li>
+                <li>Teachers and mentors</li>
+                <li>Grandparents and elders</li>
+                <li>Family members and supportive friends</li>
+              </ul>
+            </div>
+            <div>
+              <p class="prompt">Specific invitations</p>
+              <ul>
+                <li>Sisters, mom, and extended family</li>
+                <li>Daniel's parents and friends near and far</li>
+                <li>Close friends including Elle, Danny, and Rose</li>
+                <li>Anyone aligned who can help bring shared visions to life</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <p class="prompt">Conflict agreements</p>
+            <blockquote>
+              Commit to addressing challenges verbally instead of by text. Clarify agreements up
+              front, with verbal confirmations and written notes when needed.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">Shared agreements and commitments</p>
+            <blockquote>
+              Develop overarching agreements tied to the shared vision, alongside practical
+              commitments for anyone staying on the land.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">Village through the eyes of the kids</p>
+            <blockquote>
+              Children learn gardening, sustainability, building, music, and arts. They receive
+              intergenerational mentorship, spend more time with grandparents and aunties, and
+              enjoy dance parties, plays, and shared celebrations. The village nourishes with
+              love, resilience, and belonging, while giving parents space to collaborate and rest.
+            </blockquote>
+            <blockquote>
+              Kids contribute by sharing love, laughter, curiosity, and growing into helpful,
+              giving community members.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">Current village elements</p>
+            <blockquote>
+              Support from mother's helpers, nanny Gianna, visiting friends, and extended family
+              staying connected through calls and visits. Past communal experiences offered a
+              glimpse of what worked alongside lessons about agreements and expectations.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">What feels missing?</p>
+            <blockquote>
+              Nearby family, regular connection with dad, helpers for projects, more communal
+              meals, co-working energy, and kindred spirits who love to dance, learn, and create.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">Learning goals</p>
+            <ul>
+              <li>Attracting aligned people</li>
+              <li>Crafting and sustaining agreements</li>
+              <li>Handling transitions when things shift</li>
+              <li>Creating learning and schooling communities</li>
+              <li>Exploring currency and exchange models</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="day" class="section" aria-labelledby="day-heading">
+        <h3 id="day-heading">Part 2 · Day in the Village of Your Dreams</h3>
+        <div class="prompts">
+          <p>
+            Envision a day surrounded by community: morning walks, shared projects in the garden
+            and dance studio, music, meals, and planning sessions over breakfast. Family and
+            friends drop in to collaborate, mentor the kids, and kindle creativity.
+          </p>
+          <blockquote>
+            Spaces hum with sustainable living, art, and celebration. Dinnertime becomes a ritual
+            of stories around the fire, projects progress across the property, and teachers flow in
+            and out to support the children's curiosity.
+          </blockquote>
+          <p class="note">
+            Optional audio visualization (21 minutes):
+            <a
+              href="https://drive.google.com/drive/folders/1qCBQEXnsS0KweUOV4_peqwDWKRwp1JSn"
+              target="_blank"
+              rel="noopener"
+              >Listen here</a
+            >.
+          </p>
+          <div>
+            <p class="prompt">Guiding prompts to explore</p>
+            <ul>
+              <li>How do you wake and gather nourishment in the morning?</li>
+              <li>What is the pace of your day? Who arrives and how?</li>
+              <li>Where do you pour your creativity and purpose?</li>
+              <li>How are meals shared and who contributes?</li>
+              <li>What rituals mark transitions throughout the day?</li>
+              <li>How do you replenish yourself and celebrate before rest?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="obstacles" class="section" aria-labelledby="obstacles-heading">
+        <h3 id="obstacles-heading">Part 3 · Potential Obstacles</h3>
+        <div class="prompts">
+          <p class="prompt">Voicing the "yeah, but..." considerations</p>
+          <blockquote>
+            How many people feel manageable? What about navigating drama while honoring a need for
+            personal space? Past communal living brought joy and connection, yet highlighted the
+            importance of clear expectations.
+          </blockquote>
+          <blockquote>
+            Concerns include judgment stemming from public past experiences, finding common ground
+            locally, and ensuring gatherings attract aligned, intentional participants.
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="rhythm" class="section" aria-labelledby="rhythm-heading">
+        <h3 id="rhythm-heading">Part 4 · Defining the Rhythm and Schedule</h3>
+        <div class="prompts">
+          <div>
+            <p class="prompt">Current rhythm</p>
+            <blockquote>
+              Days begin around 5 or 6 a.m. with family meals, toddler adventures, naps, and support
+              from helpers or the YMCA. Work on music, DJ projects, freelancing, and business
+              building weave through the week, along with community dance gatherings when possible.
+            </blockquote>
+          </div>
+          <div>
+            <p class="prompt">What works right now?</p>
+            <blockquote>Flexibility.</blockquote>
+          </div>
+          <div>
+            <p class="prompt">What changes feel supportive?</p>
+            <blockquote>Still unfolding; tuning in for clarity.</blockquote>
+          </div>
+          <div>
+            <p class="prompt">Desired village elements to weave in</p>
+            <blockquote>To be discovered through experimentation and planning.</blockquote>
+          </div>
+          <div class="actions" aria-label="Action steps">
+            <p class="prompt">Immediate action ideas</p>
+            <ul>
+              <li>Video call dad.</li>
+              <li>Start or join a playgroup.</li>
+              <li>Clear the barn to activate the dance space (explore help).</li>
+              <li>Call grandparents.</li>
+              <li>Tour an inspiring nearby foundation.</li>
+              <li>Create more livable spaces across the property.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="prompt">Tomorrow's experiment</p>
+            <blockquote>
+              Invite interest for a playgroup in the dance space to spark momentum and motivation.
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Ready to co-create the village vision? Return to the
+        <a href="index.html">TEA Foundation home</a> for more experiences.
+      </p>
+    </footer>
+  </body>
+</html>
