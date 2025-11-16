@@ -12,6 +12,7 @@ npx serve .
 
 ### Additional pages
 
+- `about.html` introduces the TEA Foundation mission, pillars, and collaboration pathways.
 - `revillaging.html` captures the Revillaging Strategy Sessions vision sketch with guided prompts.
 - `projects.html` showcases active initiatives with cards that link to individual project pages such as
   `project-dance-studio.html`.
