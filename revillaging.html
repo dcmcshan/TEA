@@ -151,23 +151,42 @@
         letter-spacing: 0.05em;
       }
 
-      .prompts {
+      .qa-group {
         display: flex;
         flex-direction: column;
-        gap: 1.4rem;
+        gap: clamp(1.2rem, 2.5vw, 1.9rem);
       }
 
-      .prompt {
+      .qa h4 {
+        margin: 0;
+        font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+        letter-spacing: 0.04em;
         font-weight: 600;
-        letter-spacing: 0.02em;
       }
 
-      blockquote {
-        margin: 0.65rem 0 0;
+      .qa p {
+        margin: 0.6rem 0 0;
+        line-height: 1.7;
+        color: rgba(245, 245, 250, 0.88);
+      }
+
+      .qa blockquote {
+        margin: 0.6rem 0 0;
         padding-left: 1.25rem;
         border-left: 3px solid rgba(125, 84, 242, 0.4);
         color: rgba(245, 245, 250, 0.88);
         line-height: 1.7;
+      }
+
+      .qa ul {
+        margin: 0.6rem 0 0;
+        padding-left: 1.25rem;
+        line-height: 1.7;
+        color: rgba(245, 245, 250, 0.88);
+      }
+
+      .qa ul li + li {
+        margin-top: 0.35rem;
       }
 
       .list-columns {
@@ -280,108 +299,170 @@
 
       <section id="foundation" class="section" aria-labelledby="foundation-heading">
         <h3 id="foundation-heading">Part 1 · Defining the Foundation</h3>
-        <div class="prompts">
-          <div>
-            <p class="prompt">What does "village" mean to you?</p>
-            <blockquote>
-              Village is a community of connection: a web of mutually supportive relationships,
-              role models, shared meals, tea, fireside gatherings, dance, play, and co-creation.
-              It is family-style support, shared vision, spaces for play, healing, movement,
-              exploration, and art. It is a way of living closer to how we were meant to live.
-            </blockquote>
-            <blockquote>
-              The vision includes building a dance community, being a hub for playful creativity,
-              and cultivating a sustainable food forest with sober daytime dance parties, family
-              dance events, and traditions that attract open-minded people.
-            </blockquote>
+        <div class="qa-group">
+          <div class="qa">
+            <h4>What does “village” mean to you? How would you define or describe “the village”?</h4>
+            <p>
+              Village is a community of connections: a network of mutually supportive relationships,
+              role models for our children, and shared rituals like meals, tea, fireside chats,
+              dancing, play, and co-creating spaces for healing, movement, exploration, and art. It
+              feels like family-style support and stewardship of the land.
+            </p>
+            <p>
+              A village is a way of life that feels closer to how we were meant to live. Traveling
+              created that feeling of connection, whereas parenting young babies felt insular. As we
+              move through uncertain times, building the village now is an essential act of
+              sustainability and survival.
+            </p>
+            <p>
+              Beyond that urgency, the dream is to build a dance community and become a hub for
+              playful creativity. The village hosts sober daytime dance parties, family dance
+              events, and traditions that attract open-minded people alongside a sustainable food
+              forest.
+            </p>
           </div>
-          <div>
-            <p class="prompt">What ingredients matter most?</p>
-            <blockquote>
-              Dancing and music, intergenerational presence, love of children, alternative and
-              homeschooling, creativity, open-mindedness, playfulness, presence, stewardship,
-              sustainability, low drama, self responsibility, health, movement, healing, integrity,
-              and gift economies.
-            </blockquote>
+
+          <div class="qa">
+            <h4>What “ingredients” of your village are important to you?</h4>
+            <p>
+              Dancing and music, children and elders together, homeschooling and alternative
+              learning, creativity, open-mindedness, playfulness, presence, low-drama community,
+              motivation, self-responsibility, family, health, movement, healing, sustainability,
+              integrity, and generous gift economies.
+            </p>
           </div>
-          <div class="list-columns">
-            <div>
-              <p class="prompt">Location and governance considerations</p>
-              <ul>
-                <li>Anchor close to home while clarifying roles and agreements.</li>
-                <li>Explore stewardship models that honor shared space ownership.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="prompt">People, roles, and contributions</p>
-              <ul>
-                <li>Craftspeople, builders, and fixers</li>
-                <li>Artists, performers, musicians</li>
-                <li>Teachers and mentors</li>
-                <li>Grandparents and elders</li>
-                <li>Family members and supportive friends</li>
-              </ul>
-            </div>
-            <div>
-              <p class="prompt">Specific invitations</p>
-              <ul>
-                <li>Sisters, mom, and extended family</li>
-                <li>Daniel's parents and friends near and far</li>
-                <li>Close friends including Elle, Danny, and Rose</li>
-                <li>Anyone aligned who can help bring shared visions to life</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <p class="prompt">Conflict agreements</p>
-            <blockquote>
-              Commit to addressing challenges verbally instead of by text. Clarify agreements up
-              front, with verbal confirmations and written notes when needed.
-            </blockquote>
-          </div>
-          <div>
-            <p class="prompt">Shared agreements and commitments</p>
-            <blockquote>
-              Develop overarching agreements tied to the shared vision, alongside practical
-              commitments for anyone staying on the land.
-            </blockquote>
-          </div>
-          <div>
-            <p class="prompt">Village through the eyes of the kids</p>
-            <blockquote>
-              Children learn gardening, sustainability, building, music, and arts. They receive
-              intergenerational mentorship, spend more time with grandparents and aunties, and
-              enjoy dance parties, plays, and shared celebrations. The village nourishes with
-              love, resilience, and belonging, while giving parents space to collaborate and rest.
-            </blockquote>
-            <blockquote>
-              Kids contribute by sharing love, laughter, curiosity, and growing into helpful,
-              giving community members.
-            </blockquote>
-          </div>
-          <div>
-            <p class="prompt">Current village elements</p>
-            <blockquote>
-              Support from mother's helpers, nanny Gianna, visiting friends, and extended family
-              staying connected through calls and visits. Past communal experiences offered a
-              glimpse of what worked alongside lessons about agreements and expectations.
-            </blockquote>
-          </div>
-          <div>
-            <p class="prompt">What feels missing?</p>
-            <blockquote>
-              Nearby family, regular connection with dad, helpers for projects, more communal
-              meals, co-working energy, and kindred spirits who love to dance, learn, and create.
-            </blockquote>
-          </div>
-          <div>
-            <p class="prompt">Learning goals</p>
+
+          <div class="qa">
+            <h4>Values that ground the community</h4>
             <ul>
-              <li>Attracting aligned people</li>
-              <li>Crafting and sustaining agreements</li>
-              <li>Handling transitions when things shift</li>
-              <li>Creating learning and schooling communities</li>
-              <li>Exploring currency and exchange models</li>
+              <li>Creativity, open-mindedness, and playfulness</li>
+              <li>Presence, family, and community care</li>
+              <li>Stewardship, sustainability, and truthful communication</li>
+              <li>Motivation, self-responsibility, generosity, and gift exchange</li>
+            </ul>
+          </div>
+
+          <div class="qa">
+            <h4>Location, roles, and governance considerations</h4>
+            <p>
+              The village is rooted here and close by. Because we own the space, we want to clarify
+              roles and how caretaking or residency agreements are held. Governance should align
+              with shared vision while honoring responsibility for the land.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Who are the people, roles, and contributions you imagine?</h4>
+            <ul>
+              <li>Crafty and handy collaborators who help build and maintain the property</li>
+              <li>Artists, performers, musicians, and teachers</li>
+              <li>Grandparents, elders, and actual close family members</li>
+              <li>Friends who bring ideas to life and help things get done</li>
+            </ul>
+          </div>
+
+          <div class="qa">
+            <h4>Specific people you want to include</h4>
+            <ul>
+              <li>Sisters, mom, and extended family</li>
+              <li>Inviting dad to be more involved</li>
+              <li>Daniel’s parents and wider family</li>
+              <li>Friends near and far: Elle, Danny, Rose, and others we attract</li>
+            </ul>
+          </div>
+
+          <div class="qa">
+            <h4>How do you deal with conflict or disagreement?</h4>
+            <p>
+              We agree not to handle conflict over text. Conversations happen in person or verbally,
+              with implied agreements clarified upfront. When commitments are important, pair verbal
+              check-ins with written notes so expectations stay clear.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>What agreements and commitments unite the village?</h4>
+            <p>
+              We want overarching agreements tied to the shared vision, plus the practical bones of
+              what it means for someone to stay here. These will keep evolving as the village grows.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>How do the kids experience the village?</h4>
+            <p>
+              They learn gardening, sustainability, building, music, plays, and endless skills from
+              other children and elders. There are dance parties, art, and random interests that we
+              alone cannot provide.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>How does the village provide for them?</h4>
+            <p>
+              The village offers long-term survival, sustainable futures, love, nourishment, and a
+              lifelong love of learning. It fosters empathy, relationship skills, and gives kids
+              time with others while parents collaborate on shared and individual projects. It also
+              grants parents space for partnership and creative work.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>How do your kids contribute to the village?</h4>
+            <p>
+              Through love, laughter, curiosity, and learning how to give. The hope is that they grow
+              up understanding how to contribute and participate actively in community.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Current glimpses of the village</h4>
+            <p>
+              Mother’s helpers, nanny Gianna, visiting friends, and extended family calls provide
+              support. NextDoor connections offered meals and companionship postpartum, and friends
+              like Danny, Rose, Elle, and Ali bring shared interests. Past communal living brought
+              joy alongside lessons about agreements and expectations.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Share more about life right now</h4>
+            <p>
+              Postpartum support from neighbors and helpers was nourishing, although coordinating it
+              while caring for newborns proved challenging. FaceTime keeps distant family close, and
+              there is a deep desire to include dad and nearby friends more regularly. The longing
+              is for weekly family time and for loved ones who cherish the children to be present in
+              everyday life.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Who is part of your village right now?</h4>
+            <ul>
+              <li>Immediate family, even if geographically distant</li>
+              <li>Sisters in Florida, Maine, and Washington, plus mom</li>
+              <li>Friend Elle, friends Danny and Rose in Denver, and neighbor friends</li>
+              <li>Two mother’s helpers, a supportive nanny, and friend Gio (navigating commitments)</li>
+            </ul>
+          </div>
+
+          <div class="qa">
+            <h4>What feels missing?</h4>
+            <p>
+              Nearby grandparents, weekly time with family, aunties, uncles, community help with
+              projects, dinners together, shared motivation, dance-loving creatives, and the steady
+              presence of people who care deeply about the children.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>What do you want to learn more about or try?</h4>
+            <ul>
+              <li>Attracting the right people and holding agreements</li>
+              <li>Handling transitions when things don’t work out</li>
+              <li>Nurturing relationships and sustaining community</li>
+              <li>Creating learning and schooling environments</li>
+              <li>Exploring currency systems and gift economies (Daniel’s curiosity)</li>
             </ul>
           </div>
         </div>
@@ -389,35 +470,51 @@
 
       <section id="day" class="section" aria-labelledby="day-heading">
         <h3 id="day-heading">Part 2 · Day in the Village of Your Dreams</h3>
-        <div class="prompts">
-          <p>
-            Envision a day surrounded by community: morning walks, shared projects in the garden
-            and dance studio, music, meals, and planning sessions over breakfast. Family and
-            friends drop in to collaborate, mentor the kids, and kindle creativity.
-          </p>
-          <blockquote>
-            Spaces hum with sustainable living, art, and celebration. Dinnertime becomes a ritual
-            of stories around the fire, projects progress across the property, and teachers flow in
-            and out to support the children's curiosity.
-          </blockquote>
-          <p class="note">
-            Optional audio visualization (21 minutes):
-            <a
-              href="https://drive.google.com/drive/folders/1qCBQEXnsS0KweUOV4_peqwDWKRwp1JSn"
-              target="_blank"
-              rel="noopener"
-              >Listen here</a
-            >.
-          </p>
-          <div>
-            <p class="prompt">Guiding prompts to explore</p>
+        <div class="qa-group">
+          <div class="qa">
+            <h4>What does a day in the village feel like?</h4>
+            <p>
+              Regular walks with neighbors, people dropping in to help with shared visions, and
+              hands in the garden or dance studio. Community gathers around dance and music,
+              artists collaborate, families share dinners, and the babies have playmates and older
+              role models nearby. The village thrives on magical celebrations and sustainable
+              living.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Moments that surfaced during visioning</h4>
+            <p>
+              Planning projects with others over breakfast, coordinating dance events, dancing with
+              the kids, dad teaching Finn how to build, sisters and friends sharing dinner, and
+              seeing multiple projects actively moving across the property. Teachers flow in and out
+              to support the children’s curiosity.
+            </p>
+          </div>
+
+          <div class="qa">
+            <h4>Guided visualization support</h4>
+            <p class="note">
+              Optional 21-minute audio:
+              <a
+                href="https://drive.google.com/drive/folders/1qCBQEXnsS0KweUOV4_peqwDWKRwp1JSn"
+                target="_blank"
+                rel="noopener"
+                >Listen here</a
+              >.
+            </p>
+            <p>
+              Return to these prompts as the vision evolves:
+            </p>
             <ul>
-              <li>How do you wake and gather nourishment in the morning?</li>
-              <li>What is the pace of your day? Who arrives and how?</li>
-              <li>Where do you pour your creativity and purpose?</li>
-              <li>How are meals shared and who contributes?</li>
-              <li>What rituals mark transitions throughout the day?</li>
-              <li>How do you replenish yourself and celebrate before rest?</li>
+              <li>How do mornings begin, and who gathers for nourishment?</li>
+              <li>What is the pace of the day—who arrives, who hosts, who travels?</li>
+              <li>Where does creativity and purpose flow, and who collaborates?</li>
+              <li>How are meals prepared, shared, and ritualized?</li>
+              <li>What transitions shape afternoon, evening, and rest?</li>
+              <li>
+                How do you recharge, celebrate, and close the day with gratitude and connection?
+              </li>
             </ul>
           </div>
         </div>
@@ -425,59 +522,80 @@
 
       <section id="obstacles" class="section" aria-labelledby="obstacles-heading">
         <h3 id="obstacles-heading">Part 3 · Potential Obstacles</h3>
-        <div class="prompts">
-          <p class="prompt">Voicing the "yeah, but..." considerations</p>
-          <blockquote>
-            How many people feel manageable? What about navigating drama while honoring a need for
-            personal space? Past communal living brought joy and connection, yet highlighted the
-            importance of clear expectations.
-          </blockquote>
-          <blockquote>
-            Concerns include judgment stemming from public past experiences, finding common ground
-            locally, and ensuring gatherings attract aligned, intentional participants.
-          </blockquote>
+        <div class="qa-group">
+          <div class="qa">
+            <h4>What resistance or “yeah, but…” thoughts surfaced?</h4>
+            <p>
+              How many people can we truly hold in our lives? Do we really want potential drama? It
+              feels important to honor personal space even while craving community. Past communal
+              living brought joy—like the stretch when Vic and Gio lived with us—but also highlighted
+              the need for clearer agreements.
+            </p>
+            <p>
+              There is worry about judgment tied to past experiences online, including Daniel’s
+              history, as well as finding common ground with local neighbors. The hope is that
+              intentional events will attract the right people.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="rhythm" class="section" aria-labelledby="rhythm-heading">
         <h3 id="rhythm-heading">Part 4 · Defining the Rhythm and Schedule</h3>
-        <div class="prompts">
-          <div>
-            <p class="prompt">Current rhythm</p>
-            <blockquote>
-              Days begin around 5 or 6 a.m. with family meals, toddler adventures, naps, and support
-              from helpers or the YMCA. Work on music, DJ projects, freelancing, and business
-              building weave through the week, along with community dance gatherings when possible.
-            </blockquote>
+        <div class="qa-group">
+          <div class="qa">
+            <h4>What does your schedule look like right now?</h4>
+            <p>
+              Days start around 5–6 a.m. with the hope of quiet time before the toddler wakes.
+              Breakfast happens together, followed by outside play, naps around 10 or 11, and
+              support from helpers in the afternoon when available. Some days include YMCA visits,
+              park adventures, or toddler programs. Saturdays focus on music and DJ work while
+              freelance projects weave through the week. Ecstatic dance gatherings in Denver offer
+              community touch points.
+            </p>
           </div>
-          <div>
-            <p class="prompt">What works right now?</p>
-            <blockquote>Flexibility.</blockquote>
+
+          <div class="qa">
+            <h4>What about the current rhythm feels good?</h4>
+            <p>Flexibility.</p>
           </div>
-          <div>
-            <p class="prompt">What changes feel supportive?</p>
-            <blockquote>Still unfolding; tuning in for clarity.</blockquote>
+
+          <div class="qa">
+            <h4>What would you like to change?</h4>
+            <p>Clarity is still unfolding—listening for what wants to shift.</p>
           </div>
-          <div>
-            <p class="prompt">Desired village elements to weave in</p>
-            <blockquote>To be discovered through experimentation and planning.</blockquote>
+
+          <div class="qa">
+            <h4>What village elements would you like to weave into the schedule?</h4>
+            <p>
+              Still discovering; experimentation will reveal which pieces—gatherings, projects,
+              shared childcare—fit naturally into the family rhythm.
+            </p>
           </div>
-          <div class="actions" aria-label="Action steps">
-            <p class="prompt">Immediate action ideas</p>
+
+          <div class="qa">
+            <h4>What support is needed?</h4>
+            <p>Actionable steps and aligned helpers to make the vision tangible.</p>
+          </div>
+
+          <div class="qa">
+            <h4>What action steps can you take right now?</h4>
             <ul>
               <li>Video call dad.</li>
-              <li>Start or join a playgroup.</li>
-              <li>Clear the barn to activate the dance space (explore help).</li>
-              <li>Call grandparents.</li>
-              <li>Tour an inspiring nearby foundation.</li>
-              <li>Create more livable spaces across the property.</li>
+              <li>Get a playgroup going—or join one already forming.</li>
+              <li>Clear the barn to activate the dance space (seek support).</li>
+              <li>Call grandparents and reconnect consistently.</li>
+              <li>Tour a nearby inspiring foundation for ideas.</li>
+              <li>Transform partially finished areas into livable spaces.</li>
             </ul>
           </div>
-          <div>
-            <p class="prompt">Tomorrow's experiment</p>
-            <blockquote>
-              Invite interest for a playgroup in the dance space to spark momentum and motivation.
-            </blockquote>
+
+          <div class="qa">
+            <h4>What is one experiment you could try tomorrow?</h4>
+            <p>
+              Announce and host an interest list for a playgroup in the dance space to build
+              momentum and motivation.
+            </p>
           </div>
         </div>
       </section>

@@ -138,6 +138,82 @@
       a:hover::after {
         transform: scaleX(1);
       }
+
+      .village-overview {
+        margin-top: clamp(3rem, 7vw, 4rem);
+        padding: clamp(2rem, 4vw, 3rem);
+        border-radius: 28px;
+        background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), transparent 60%);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .village-overview h2 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        letter-spacing: 0.06em;
+        font-size: clamp(1.6rem, 3vw, 2.25rem);
+      }
+
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: clamp(1.5rem, 4vw, 2.5rem);
+        margin-top: clamp(1.5rem, 3vw, 2.25rem);
+      }
+
+      .overview-card {
+        padding: clamp(1.5rem, 3vw, 2.1rem);
+        border-radius: 24px;
+        background-color: rgba(15, 18, 42, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        text-align: left;
+      }
+
+      .overview-card h3 {
+        margin: 0 0 0.9rem 0;
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        letter-spacing: 0.04em;
+      }
+
+      .overview-card p,
+      .overview-card ul {
+        margin: 0;
+        color: rgba(247, 247, 251, 0.85);
+        line-height: 1.65;
+        font-size: 1rem;
+      }
+
+      .overview-card ul {
+        padding-left: 1.1rem;
+      }
+
+      .overview-card ul li + li {
+        margin-top: 0.4rem;
+      }
+
+      .overview-cta {
+        margin-top: clamp(1.8rem, 4vw, 2.6rem);
+        display: flex;
+        justify-content: center;
+      }
+
+      .overview-cta a {
+        padding: 0.65rem 1.85rem;
+        border-radius: 999px;
+        background-color: rgba(125, 84, 242, 0.22);
+        border: 1px solid rgba(125, 84, 242, 0.45);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: transform 200ms ease, background-color 200ms ease;
+      }
+
+      .overview-cta a:hover,
+      .overview-cta a:focus-visible {
+        transform: translateY(-1px);
+        background-color: rgba(125, 84, 242, 0.32);
+        outline: none;
+      }
     </style>
   </head>
   <body>
@@ -168,6 +244,42 @@
           </div>
         </article>
       </section>
+
+        <section class="village-overview" aria-labelledby="village-overview">
+          <h2 id="village-overview">Village Definition</h2>
+          <div class="overview-grid">
+            <article class="overview-card">
+              <h3>Living Vision</h3>
+              <p>
+                A village is an interconnected web of families, artists, and stewards sharing meals,
+                dance floors, firesides, and daily projects. It is a hub for playful creativity,
+                sustainable food forests, and sober celebrations that invite multi-generational
+                mentorship.
+              </p>
+            </article>
+            <article class="overview-card">
+              <h3>Guiding Values</h3>
+              <ul>
+                <li>Creativity, playfulness, and presence</li>
+                <li>Stewardship, sustainability, and integrity</li>
+                <li>Movement, healing, and joyful learning</li>
+                <li>Gift economies and shared responsibility</li>
+              </ul>
+            </article>
+            <article class="overview-card">
+              <h3>Next Experiments</h3>
+              <ul>
+                <li>Host a playgroup in the dance space</li>
+                <li>Reconnect with grandparents and dad</li>
+                <li>Clear the barn with community support</li>
+                <li>Tour inspiring nearby foundations</li>
+              </ul>
+            </article>
+          </div>
+          <div class="overview-cta">
+            <a href="revillaging.html">Explore the full Revillaging sketch</a>
+          </div>
+        </section>
 
       <footer>
         Crafted for the TEA Foundation ·
