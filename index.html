@@ -51,6 +51,22 @@
         text-align: center;
       }
 
+      .logo-mark {
+        width: clamp(70px, 12vw, 96px);
+        aspect-ratio: 1;
+        margin: 0 auto clamp(1.2rem, 3vw, 1.8rem);
+        border-radius: 26px;
+        background: linear-gradient(140deg, rgba(125, 84, 242, 0.48), rgba(61, 182, 214, 0.32));
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 5vw, 3.4rem);
+        letter-spacing: 0.06em;
+        box-shadow: 0 16px 45px rgba(10, 12, 30, 0.55);
+      }
+
       h1 {
         margin: 0;
         font-family: "Playfair Display", serif;
@@ -218,6 +234,7 @@
   </head>
   <body>
     <main>
+      <span class="logo-mark" aria-hidden="true">&Tau;</span>
       <h1>TEA Foundation</h1>
       <p class="lead">
         Cultivating mindful experiences that blend innovation, artistry, and earth-centered
