@@ -236,63 +236,103 @@
 
       const typingSettings = {
         typeSpeed: [55, 95],
-        holdDuration: [1400, 2100],
         eraseSpeed: [35, 60],
         pauseBetween: [450, 680]
       };
+
+      const syncSettings = {
+        groupHold: 2200
+      };
+
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      const syncCoordinator = (() => {
+        const instances = new Set();
+        const waiting = new Set();
+        const resolvers = new Map();
+        let releaseTimer = null;
+
+        const scheduleRelease = () => {
+          if (releaseTimer) {
+            clearTimeout(releaseTimer);
+          }
+          releaseTimer = setTimeout(() => {
+            waiting.forEach((instance) => {
+              const resolve = resolvers.get(instance);
+              if (resolve) {
+                resolve();
+              }
+            });
+            waiting.clear();
+            resolvers.clear();
+            releaseTimer = null;
+          }, syncSettings.groupHold);
+        };
+
+        return {
+          register(instance) {
+            instances.add(instance);
+          },
+          awaitRelease(instance) {
+            waiting.add(instance);
+            return new Promise((resolve) => {
+              resolvers.set(instance, resolve);
+              if (waiting.size === instances.size) {
+                scheduleRelease();
+              }
+            });
+          }
+        };
+      })();
 
       class TypeRandomizer {
         constructor(element, words) {
           this.element = element;
           this.words = words;
           this.wordEl = element.querySelector(".word");
-          this.currentWord = "";
-          this.isDeleting = false;
-          this.loop();
+          this.lastWord = "";
+          syncCoordinator.register(this);
+          this.start();
         }
 
         randomWord() {
-          const randomIndex = Math.floor(Math.random() * this.words.length);
-          return this.words[randomIndex];
+          if (this.words.length <= 1) {
+            return this.words[0] ?? "";
+          }
+          let candidate = "";
+          do {
+            candidate = this.words[Math.floor(Math.random() * this.words.length)];
+          } while (candidate === this.lastWord);
+          this.lastWord = candidate;
+          return candidate;
         }
 
         randomRange([min, max]) {
           return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        loop() {
-          if (!this.currentWord) {
-            this.targetWord = this.randomWord();
-            this.charIndex = 0;
+        async typeWord(word) {
+          for (let i = 1; i <= word.length; i += 1) {
+            this.wordEl.textContent = word.slice(0, i);
+            await sleep(this.randomRange(typingSettings.typeSpeed));
           }
+        }
 
-          if (this.isDeleting) {
-            this.currentWord = this.targetWord.slice(0, --this.charIndex);
-            this.wordEl.textContent = this.currentWord;
-
-            if (this.charIndex === 0) {
-              this.isDeleting = false;
-              this.currentWord = "";
-              setTimeout(() => this.loop(), this.randomRange(typingSettings.pauseBetween));
-              return;
-            }
-
-            setTimeout(() => this.loop(), this.randomRange(typingSettings.eraseSpeed));
-            return;
+        async eraseWord(word) {
+          for (let i = word.length - 1; i >= 0; i -= 1) {
+            this.wordEl.textContent = word.slice(0, i);
+            await sleep(this.randomRange(typingSettings.eraseSpeed));
           }
+        }
 
-          this.currentWord = this.targetWord.slice(0, ++this.charIndex);
-          this.wordEl.textContent = this.currentWord;
-
-          if (this.charIndex === this.targetWord.length) {
-            setTimeout(() => {
-              this.isDeleting = true;
-              setTimeout(() => this.loop(), this.randomRange(typingSettings.eraseSpeed));
-            }, this.randomRange(typingSettings.holdDuration));
-            return;
+        async start() {
+          while (true) {
+            const nextWord = this.randomWord();
+            await this.typeWord(nextWord);
+            await syncCoordinator.awaitRelease(this);
+            await this.eraseWord(nextWord);
+            await sleep(this.randomRange(typingSettings.pauseBetween));
           }
-
-          setTimeout(() => this.loop(), this.randomRange(typingSettings.typeSpeed));
         }
       }
 
