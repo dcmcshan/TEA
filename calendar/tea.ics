@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:WaGk4gcIU3LLQHCooxKtk
+SUMMARY:Village Vision Circle
+DTSTAMP:20251116T220149Z
+DTSTART:20250113T010000Z
+DESCRIPTION:Monthly gathering to review progress on Revillaging sessions an
+	d set intentions for the next cycle.
+URL:https://dcmcshan.github.io/TEA/revillaging.html
+LOCATION:TEA Foundation Barn Loft\, Monument\, CO
+DURATION:PT2H
+END:VEVENT
+BEGIN:VEVENT
+UID:H9I54VPK7EJJONTYX4Dxz
+SUMMARY:Sunrise Dance Studio Build Day
+DTSTAMP:20251116T220149Z
+DTSTART:20250125T170000Z
+DESCRIPTION:Community build focused on flooring\, lighting\, and acoustic t
+	reatments in the Sunrise Studio.
+URL:https://dcmcshan.github.io/TEA/project-dance-studio.html
+LOCATION:TEA Foundation Sunrise Studio\, Monument\, CO
+DURATION:PT4H
+END:VEVENT
+BEGIN:VEVENT
+UID:pNjIYBtQnvlGoEWFJBnSp
+SUMMARY:Food Forest Design Charrette
+DTSTAMP:20251116T220149Z
+DTSTART:20250202T210000Z
+DESCRIPTION:Collaborative planning session for the Food Forest Collective. 
+	Bring sketches\, plants\, and ideas.
+URL:https://dcmcshan.github.io/TEA/project-food-forest.html
+LOCATION:TEA Foundation Garden Commons\, Monument\, CO
+DURATION:PT3H
+END:VEVENT
+END:VCALENDAR

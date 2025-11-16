@@ -17,6 +17,7 @@ npx serve .
 - `projects.html` showcases active initiatives with cards that link to individual project pages such as
   `project-dance-studio.html`.
 - `/calendar/tea.ics` serves a subscribable calendar feed generated from curated TEA events.
+  The live URL is `https://dcmcshan.github.io/TEA/calendar/tea.ics`.
 
 ## Deploy to GitHub Pages
 
@@ -49,3 +50,13 @@ npm start
 This makes the site available at `http://localhost:3000/` and exposes the calendar at `http://localhost:3000/calendar/tea.ics`.
 
 To subscribe directly from calendar apps, use the `webcal://localhost:3000/calendar/tea.ics` URL while the server is running.
+
+### Refreshing the static calendar feed for GitHub Pages
+
+The same events are published as a static `.ics` file so GitHub Pages serves them without the Node server.
+
+```bash
+npm run generate:ics
+```
+
+This regenerates `calendar/tea.ics`, which is available publicly at `https://dcmcshan.github.io/TEA/calendar/tea.ics`.
