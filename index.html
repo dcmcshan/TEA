@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TEA Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --accent: #7d54f2;
+        --accent-soft: rgba(125, 84, 242, 0.12);
+        --bg: #0f1020;
+        --bg-soft: rgba(255, 255, 255, 0.04);
+        --text: #f7f7fb;
+        --text-muted: rgba(247, 247, 251, 0.75);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, rgba(125, 84, 242, 0.25), transparent),
+          radial-gradient(circle at bottom right, rgba(61, 182, 214, 0.2), transparent),
+          linear-gradient(135deg, #090a16 0%, #151830 100%);
+        color: var(--text);
+      }
+
+      main {
+        width: min(1080px, 100%);
+        backdrop-filter: blur(18px);
+        background-color: rgba(12, 14, 34, 0.58);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 32px;
+        padding: 3.5rem clamp(1.5rem, 4vw, 3.5rem);
+        box-shadow: 0 32px 80px rgba(6, 8, 20, 0.5);
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 4vw, 3.75rem);
+        letter-spacing: 0.08em;
+      }
+
+      .lead {
+        margin-top: 1rem;
+        font-size: clamp(1rem, 2.2vw, 1.35rem);
+        color: var(--text-muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: clamp(1.75rem, 4vw, 2.75rem);
+        margin-top: clamp(2.75rem, 6vw, 3.75rem);
+      }
+
+      .pillar {
+        padding: clamp(1.75rem, 5vw, 2.75rem);
+        border-radius: 24px;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), transparent);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pillar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(125, 84, 242, 0.3), transparent 70%);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+      }
+
+      .pillar:hover::after {
+        opacity: 1;
+      }
+
+      .anchor-letter {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3.5rem, 8vw, 5.5rem);
+        margin-bottom: 1.25rem;
+        color: var(--accent);
+        letter-spacing: 0.1em;
+      }
+
+      .typed-word {
+        min-height: 2.5em;
+        font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+        line-height: 1.4;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      footer {
+        margin-top: clamp(2.5rem, 6vw, 3.75rem);
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 200ms ease;
+      }
+
+      a:hover::after {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TEA Foundation</h1>
+      <p class="lead">
+        Cultivating mindful experiences that blend innovation, artistry, and earth-centered
+        wisdom.
+      </p>
+
+      <section class="grid" aria-label="TEA pillars">
+        <article class="pillar" data-letter="T">
+          <div class="anchor-letter" aria-hidden="true">T</div>
+          <div class="typed-word" aria-live="polite">
+            <span class="word"></span>
+          </div>
+        </article>
+        <article class="pillar" data-letter="E">
+          <div class="anchor-letter" aria-hidden="true">E</div>
+          <div class="typed-word" aria-live="polite">
+            <span class="word"></span>
+          </div>
+        </article>
+        <article class="pillar" data-letter="A">
+          <div class="anchor-letter" aria-hidden="true">A</div>
+          <div class="typed-word" aria-live="polite">
+            <span class="word"></span>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        Crafted for the TEA Foundation ·
+        <a href="https://github.com/" target="_blank" rel="noopener">Explore our story</a>
+      </footer>
+    </main>
+
+    <script>
+      const wordSource = [
+        "Thoughtful",
+        "Tranquil",
+        "Tasteful",
+        "Terrestrial",
+        "Transcendent",
+        "Transformative",
+        "Temple",
+        "Therapeutic",
+        "Tabernacle",
+        "Thesis",
+        "Trail",
+        "Third Eye",
+        "Terra",
+        "Ecstatic",
+        "Elegant",
+        "Essence",
+        "Exquisite",
+        "Educational",
+        "Ecology",
+        "Entheogenic",
+        "Earth",
+        "Engineering",
+        "Entertainment",
+        "Engaging",
+        "Embodied",
+        "Effervescent",
+        "Existential",
+        "Eco",
+        "Abundance",
+        "Adventures",
+        "Aesthetics",
+        "Art",
+        "Amplification",
+        "Alignment",
+        "Advancement",
+        "Activation",
+        "Ambiance",
+        "Astral",
+        "Aftercare",
+        "Agriculture",
+        "Agrarian",
+        "Attitude",
+        "Aptitude",
+        "Avatar"
+      ];
+
+      const groupedWords = wordSource.reduce(
+        (acc, word) => {
+          const initial = word[0]?.toUpperCase();
+          if (acc[initial]) {
+            acc[initial].push(word);
+          }
+          return acc;
+        },
+        { T: [], E: [], A: [] }
+      );
+
+      const typingSettings = {
+        typeSpeed: [55, 95],
+        holdDuration: [1400, 2100],
+        eraseSpeed: [35, 60],
+        pauseBetween: [450, 680]
+      };
+
+      class TypeRandomizer {
+        constructor(element, words) {
+          this.element = element;
+          this.words = words;
+          this.wordEl = element.querySelector(".word");
+          this.currentWord = "";
+          this.isDeleting = false;
+          this.loop();
+        }
+
+        randomWord() {
+          const randomIndex = Math.floor(Math.random() * this.words.length);
+          return this.words[randomIndex];
+        }
+
+        randomRange([min, max]) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        loop() {
+          if (!this.currentWord) {
+            this.targetWord = this.randomWord();
+            this.charIndex = 0;
+          }
+
+          if (this.isDeleting) {
+            this.currentWord = this.targetWord.slice(0, --this.charIndex);
+            this.wordEl.textContent = this.currentWord;
+
+            if (this.charIndex === 0) {
+              this.isDeleting = false;
+              this.currentWord = "";
+              setTimeout(() => this.loop(), this.randomRange(typingSettings.pauseBetween));
+              return;
+            }
+
+            setTimeout(() => this.loop(), this.randomRange(typingSettings.eraseSpeed));
+            return;
+          }
+
+          this.currentWord = this.targetWord.slice(0, ++this.charIndex);
+          this.wordEl.textContent = this.currentWord;
+
+          if (this.charIndex === this.targetWord.length) {
+            setTimeout(() => {
+              this.isDeleting = true;
+              setTimeout(() => this.loop(), this.randomRange(typingSettings.eraseSpeed));
+            }, this.randomRange(typingSettings.holdDuration));
+            return;
+          }
+
+          setTimeout(() => this.loop(), this.randomRange(typingSettings.typeSpeed));
+        }
+      }
+
+      document.querySelectorAll(".pillar").forEach((pillar) => {
+        const letter = pillar.dataset.letter;
+        const words = groupedWords[letter];
+        if (words?.length) {
+          new TypeRandomizer(pillar, words);
+        } else {
+          pillar.querySelector(".word").textContent = "Imagination";
+        }
+      });
+    </script>
+  </body>
+</html>
