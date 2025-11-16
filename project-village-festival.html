@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Village Festival Series · TEA Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --accent: #7d54f2;
+        --accent-soft: rgba(125, 84, 242, 0.18);
+        --bg: #0f1020;
+        --surface: rgba(16, 18, 36, 0.78);
+        --surface-soft: rgba(255, 255, 255, 0.08);
+        --text: #f5f5fa;
+        --text-muted: rgba(245, 245, 250, 0.8);
+        --border: rgba(255, 255, 255, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: clamp(2rem, 4vw, 4rem);
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, rgba(125, 84, 242, 0.28), transparent),
+          radial-gradient(circle at bottom right, rgba(61, 182, 214, 0.28), transparent),
+          linear-gradient(135deg, #090a16 0%, #151830 100%);
+        color: var(--text);
+      }
+
+      header,
+      main,
+      footer {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: clamp(2rem, 5vw, 3rem);
+      }
+
+      .logo-mark {
+        width: clamp(72px, 12vw, 104px);
+        aspect-ratio: 1;
+        margin: 0 auto clamp(1.2rem, 3vw, 1.9rem);
+        border-radius: 28px;
+        background: linear-gradient(140deg, rgba(125, 84, 242, 0.48), rgba(61, 182, 214, 0.32));
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.6rem, 5.5vw, 3.6rem);
+        letter-spacing: 0.06em;
+        box-shadow: 0 18px 52px rgba(10, 12, 30, 0.55);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.3rem, 4.5vw, 3.2rem);
+        letter-spacing: 0.08em;
+      }
+
+      .lead {
+        margin-top: 1rem;
+        font-size: clamp(1rem, 2.2vw, 1.3rem);
+        color: var(--text-muted);
+      }
+
+      .hero {
+        border-radius: 32px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 28px 70px rgba(6, 8, 22, 0.45);
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+      }
+
+      .hero img {
+        width: 100%;
+        height: clamp(240px, 40vw, 360px);
+        object-fit: cover;
+        display: block;
+      }
+
+      main {
+        display: grid;
+        gap: clamp(2rem, 4vw, 3rem);
+      }
+
+      .layout {
+        display: grid;
+        gap: clamp(1.75rem, 3vw, 2.5rem);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .panel {
+        padding: clamp(1.75rem, 3vw, 2.4rem);
+        border-radius: 30px;
+        background: rgba(15, 18, 42, 0.72);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(16px);
+      }
+
+      .panel h2 {
+        margin-top: 0;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+        letter-spacing: 0.05em;
+      }
+
+      .panel p,
+      .panel ul {
+        color: rgba(245, 245, 250, 0.85);
+        line-height: 1.7;
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .panel ul {
+        padding-left: 1.25rem;
+        margin-top: 0.75rem;
+      }
+
+      .panel ul li + li {
+        margin-top: 0.4rem;
+      }
+
+      .cta-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: clamp(1.25rem, 2.5vw, 1.8rem);
+      }
+
+      .cta-links a {
+        padding: 0.65rem 1.4rem;
+        border-radius: 999px;
+        border: 1px solid rgba(125, 84, 242, 0.45);
+        background: rgba(125, 84, 242, 0.18);
+        color: inherit;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        transition: transform 200ms ease, background-color 200ms ease;
+      }
+
+      .cta-links a:hover,
+      .cta-links a:focus-visible {
+        transform: translateY(-1px);
+        background: rgba(125, 84, 242, 0.28);
+        outline: none;
+      }
+
+      form {
+        display: grid;
+        gap: 1.15rem;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-bottom: 0.45rem;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.75rem 0.9rem;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background-color: rgba(8, 10, 24, 0.75);
+        color: inherit;
+        font: inherit;
+        transition: border-color 200ms ease, box-shadow 200ms ease;
+      }
+
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: none;
+        border-color: rgba(125, 84, 242, 0.6);
+        box-shadow: 0 0 0 3px rgba(125, 84, 242, 0.25);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 140px;
+      }
+
+      button {
+        justify-self: flex-start;
+        padding: 0.65rem 1.6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(125, 84, 242, 0.45);
+        background: rgba(125, 84, 242, 0.18);
+        color: inherit;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: transform 200ms ease, background-color 200ms ease;
+      }
+
+      button:hover,
+      button:focus-visible {
+        transform: translateY(-1px);
+        background: rgba(125, 84, 242, 0.28);
+        outline: none;
+      }
+
+      footer {
+        margin-top: clamp(2.5rem, 5vw, 3.5rem);
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      footer a {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+      }
+
+      footer a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 200ms ease;
+      }
+
+      footer a:hover::after {
+        transform: scaleX(1);
+      }
+
+      @media (max-width: 720px) {
+        body {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="logo-mark" aria-hidden="true">Τ</span>
+      <h1>Village Festival Series</h1>
+      <p class="lead">
+        Designing a seasonal celebration cycle filled with music, art, permaculture workshops, and
+        kid-friendly magic rooted in village values.
+      </p>
+    </header>
+
+    <div class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1530025809667-1f4bcff10fbf?auto=format&fit=crop&w=1600&q=80"
+        alt="Nighttime outdoor festival with people gathered under lights"
+      />
+    </div>
+
+    <main>
+      <section class="layout" aria-label="Project overview">
+        <article class="panel">
+          <h2>Project Intentions</h2>
+          <p>
+            The Village Festival Series invites artists, healers, chefs, and builders to co-create
+            quarterly celebrations. Each gathering will feature immersive experiences: sunrise dance,
+            marketplace, skill shares, children's play villages, and evening ceremonies.
+          </p>
+          <div class="cta-links">
+            <a
+              href="https://trello.com/b/tea-foundation-projects"
+              target="_blank"
+              rel="noopener"
+              >Trello Board</a
+            >
+            <a href="projects.html">Back to Projects</a>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>Current Needs</h2>
+          <ul>
+            <li>Programming leads for music, movement, and ritual spaces</li>
+            <li>Production crew for staging, decor, and lighting</li>
+            <li>Food and beverage collaborators for community meals</li>
+            <li>Family zone coordinators and youth activity hosts</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel" aria-label="Application form">
+        <h2>Become a Festival Collaborator</h2>
+        <p>
+          Share how you would like to contribute to upcoming events. We will reach out with planning
+          calls and volunteer opportunities.
+        </p>
+        <form action="mailto:projects@tea.foundation" method="post" enctype="text/plain">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" autocomplete="email" required />
+          </div>
+          <div>
+            <label for="focus">Contribution Focus</label>
+            <select id="focus" name="Contribution Focus" required>
+              <option value="">Select an area</option>
+              <option>Music / Performance</option>
+              <option>Production / Stage Design</option>
+              <option>Food & Beverage</option>
+              <option>Workshops / Facilitation</option>
+              <option>Family & Youth Programming</option>
+              <option>Volunteer Coordination</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="availability">Availability</label>
+            <input
+              id="availability"
+              name="Availability"
+              type="text"
+              placeholder="Event weekends, planning meetings, etc."
+              required
+            />
+          </div>
+          <div>
+            <label for="message">Tell us about your festival magic</label>
+            <textarea
+              id="message"
+              name="Message"
+              placeholder="Share offerings, past experience, or dreams for the series."
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit Application</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      Return to <a href="projects.html">Projects</a> or the <a href="index.html">TEA Foundation home</a
+      >.
+    </footer>
+  </body>
+</html>

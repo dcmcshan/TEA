@@ -1,0 +1,14 @@
+{
+  "name": "tea-foundation-site",
+  "version": "1.0.0",
+  "description": "TEA Foundation web presence with static pages and calendar service",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ics": "^3.2.0"
+  }
+}

@@ -80,6 +80,34 @@
         color: var(--text-muted);
       }
 
+      .primary-actions {
+        margin-top: clamp(1.8rem, 4vw, 2.6rem);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+      }
+
+      .primary-actions a {
+        padding: 0.65rem 1.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(125, 84, 242, 0.45);
+        background: rgba(125, 84, 242, 0.18);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 200ms ease, background-color 200ms ease;
+      }
+
+      .primary-actions a:hover,
+      .primary-actions a:focus-visible {
+        transform: translateY(-1px);
+        background: rgba(125, 84, 242, 0.28);
+        outline: none;
+      }
+
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -240,6 +268,10 @@
         Cultivating mindful experiences that blend innovation, artistry, and earth-centered
         wisdom.
       </p>
+      <div class="primary-actions">
+        <a href="projects.html">View Projects</a>
+        <a href="/calendar/tea.ics">Subscribe to Calendar</a>
+      </div>
 
       <section class="grid" aria-label="TEA pillars">
         <article class="pillar" data-letter="T">
@@ -300,7 +332,9 @@
 
       <footer>
         Crafted for the TEA Foundation ·
-        <a href="revillaging.html">Explore Revillaging Strategy Sessions</a>
+        <a href="revillaging.html">Revillaging Strategy Sessions</a> ·
+        <a href="projects.html">Projects</a> ·
+        <a href="/calendar/tea.ics">Calendar Feed</a>
       </footer>
     </main>
 

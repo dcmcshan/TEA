@@ -13,6 +13,9 @@ npx serve .
 ### Additional pages
 
 - `revillaging.html` captures the Revillaging Strategy Sessions vision sketch with guided prompts.
+- `projects.html` showcases active initiatives with cards that link to individual project pages such as
+  `project-dance-studio.html`.
+- `/calendar/tea.ics` serves a subscribable calendar feed generated from curated TEA events.
 
 ## Deploy to GitHub Pages
 
@@ -32,3 +35,16 @@ npx serve .
 5. Save the configuration. GitHub Pages will publish the site at `https://<your-username>.github.io/<your-repo>/` after a short build queue.
 
 For a custom domain, follow the additional instructions under **Settings → Pages** and add a `CNAME` record pointing to the GitHub Pages host.
+
+## Local server with calendar endpoint
+
+The repository includes a small Express server that serves the static site and generates a live iCalendar feed.
+
+```bash
+npm install
+npm start
+```
+
+This makes the site available at `http://localhost:3000/` and exposes the calendar at `http://localhost:3000/calendar/tea.ics`.
+
+To subscribe directly from calendar apps, use the `webcal://localhost:3000/calendar/tea.ics` URL while the server is running.
