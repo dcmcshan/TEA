@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d2735" />
+      <stop offset="100%" stop-color="#1a2330" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="none" />
+  <g fill="#0b0f14">
+    <path d="M600 160c-146 0-308 116-320 250-6 74 38 128 116 142-42 18-64 52-55 86 12 46 70 74 130 62 17 32 63 60 129 60s112-28 129-60c60 12 118-16 130-62 9-34-13-68-55-86 78-14 122-68 116-142-12-134-174-250-320-250z" />
+    <path d="M540 350c-16 52-26 110-26 168 0 64 10 134 86 134s86-70 86-134c0-58-10-116-26-168-20-6-40-9-60-9s-40 3-60 9z" />
+    <path d="M600 620c-24 80-84 128-160 176h74c58-36 86-68 86-120 0 52 28 84 86 120h74c-76-48-136-96-160-176z" />
+  </g>
+  <g stroke="#0b0f14" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M600 280c-40 80-150 120-220 140" />
+    <path d="M600 280c40 80 150 120 220 140" />
+    <path d="M540 330c-30 40-110 80-170 90" />
+    <path d="M660 330c30 40 110 80 170 90" />
+    <path d="M560 520c-60 20-120 80-150 120" />
+    <path d="M640 520c60 20 120 80 150 120" />
+  </g>
+  <rect y="560" width="1200" height="240" fill="url(#ground)" />
+  <g stroke="#0b0f14" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M600 620c-40 40-100 70-160 92" />
+    <path d="M600 620c40 40 100 70 160 92" />
+    <path d="M560 660c-40 20-90 60-120 100" />
+    <path d="M640 660c40 20 90 60 120 100" />
+    <path d="M520 700c-30 10-60 40-80 70" />
+    <path d="M680 700c30 10 60 40 80 70" />
+  </g>
+</svg>
