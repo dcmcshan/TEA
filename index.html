@@ -29,19 +29,26 @@
         margin: 0;
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 3rem 1.5rem;
+        justify-content: flex-start;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
         font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top left, rgba(125, 84, 242, 0.25), transparent),
-          radial-gradient(circle at bottom right, rgba(61, 182, 214, 0.2), transparent),
-          linear-gradient(135deg, #090a16 0%, #151830 100%);
+        background:
+          linear-gradient(135deg, rgba(9, 10, 22, 0.9), rgba(21, 24, 48, 0.88)),
+          url("https://images.unsplash.com/photo-1470259078422-826894b933aa?auto=format&fit=crop&w=2000&q=80")
+            center top / cover no-repeat;
+        background-attachment: fixed;
         color: var(--text);
       }
 
       main {
         width: min(1080px, 100%);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.5rem, 5vw, 3.5rem);
         backdrop-filter: blur(18px);
         background-color: rgba(12, 14, 34, 0.58);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -106,6 +113,78 @@
         transform: translateY(-1px);
         background: rgba(125, 84, 242, 0.28);
         outline: none;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.15rem clamp(1rem, 3vw, 2rem);
+        border-radius: 22px;
+        background: rgba(12, 14, 32, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        width: min(1080px, 100%);
+      }
+
+      .site-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        font-family: "Playfair Display", serif;
+        letter-spacing: 0.06em;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: linear-gradient(140deg, rgba(125, 84, 242, 0.6), rgba(61, 182, 214, 0.42));
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.04em;
+        box-shadow: 0 12px 28px rgba(10, 12, 30, 0.45);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.85rem, 2vw, 1.4rem);
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .site-nav a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+        transition: background-color 200ms ease, color 200ms ease;
+      }
+
+      .site-nav a:hover,
+      .site-nav a:focus-visible {
+        background-color: rgba(125, 84, 242, 0.18);
+        outline: none;
+      }
+
+      .page-hero {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
       }
 
       .grid {
@@ -261,18 +340,32 @@
     </style>
   </head>
   <body>
-    <main>
-      <span class="logo-mark" aria-hidden="true">Τ</span>
-      <h1>TEA Foundation</h1>
-      <p class="lead">
-        Cultivating mindful experiences that blend innovation, artistry, and earth-centered
-        wisdom.
-      </p>
-      <div class="primary-actions">
-        <a href="about.html">About TEA</a>
+    <header class="site-header">
+      <a class="site-brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">Τ</span>
+        <span>TEA Foundation</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="/calendar/tea.ics">Subscribe to Calendar</a>
-      </div>
+        <a href="revillaging.html">Revillaging</a>
+        <a href="/calendar/tea.ics">Calendar</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <span class="logo-mark" aria-hidden="true">Τ</span>
+        <h1>TEA Foundation</h1>
+        <p class="lead">
+          Cultivating mindful experiences that blend innovation, artistry, and earth-centered
+          wisdom.
+        </p>
+        <div class="primary-actions">
+          <a href="about.html">About TEA</a>
+          <a href="projects.html">Projects</a>
+          <a href="/calendar/tea.ics">Subscribe to Calendar</a>
+        </div>
+      </section>
 
       <section class="grid" aria-label="TEA pillars">
         <article class="pillar" data-letter="T">
@@ -331,6 +424,7 @@
           </div>
         </section>
 
+      </main>
       <footer>
         Crafted for the TEA Foundation ·
         <a href="about.html">About</a> ·
@@ -338,8 +432,6 @@
         <a href="projects.html">Projects</a> ·
         <a href="/calendar/tea.ics">Calendar Feed</a>
       </footer>
-    </main>
-
     <script>
       const wordSource = [
         "Thoughtful",
@@ -501,15 +593,22 @@
         }
       }
 
-      document.querySelectorAll(".pillar").forEach((pillar) => {
-        const letter = pillar.dataset.letter;
-        const words = groupedWords[letter];
-        if (words?.length) {
-          new TypeRandomizer(pillar, words);
-        } else {
-          pillar.querySelector(".word").textContent = "Imagination";
-        }
-      });
-    </script>
+        document.querySelectorAll(".pillar").forEach((pillar) => {
+          const letter = pillar.dataset.letter;
+          const words = groupedWords[letter];
+          if (words?.length) {
+            new TypeRandomizer(pillar, words);
+          } else {
+            pillar.querySelector(".word").textContent = "Imagination";
+          }
+        });
+      </script>
+      <footer>
+        Crafted for the TEA Foundation ·
+        <a href="about.html">About</a> ·
+        <a href="revillaging.html">Revillaging Strategy Sessions</a> ·
+        <a href="projects.html">Projects</a> ·
+        <a href="/calendar/tea.ics">Calendar Feed</a>
+      </footer>
   </body>
 </html>
